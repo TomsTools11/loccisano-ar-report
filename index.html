@@ -2,333 +2,134 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>How Your Bids Work — The Loccisano Agency</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Loccisano Agency — Reports — GOAL Performance Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root {
-  --goal-brand:#077BE5; --goal-dark:#00172D; --goal-teal:#3AEECA;
-  --goal-light-blue:#97C2E8; --goal-mint:#9FDACD; --goal-light-grey:#F8F9FC;
-  --goal-text:#001020;
-  --gray:#6B7280; --light-gray:#9CA3AF; --border:#E5E7EB; --track:#F1F3F7;
-  --white:#FFFFFF; --green:#10B981; --red:#EF4444; --orange:#F59E0B;
-  --amber-light:#FEF3C7; --green-light:#D1FAE5; --blue-light:#DBEAFE;
-  --red-light:#FEE2E2;
-}
+:root{--blue:#057BE5;--blue-hover:#0C6EC5;--sky:#308ED6;--mint:#3BEECA;--mint-d:#0fae8f;
+--navy:#00172D;--navy-2:#062c4e;--navy-deep:#001020;--ink:#0F1B2D;--body:#2B3442;--muted:#6A7482;
+--white:#fff;--off:#F8FAFC;--gray:#EFF2F7;--divider:#EDF1F5;--line:#E2E8F0;--success:#2BBF7A;--warning:#F0A93B;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Helvetica','Arial',sans-serif;background:var(--white);color:var(--goal-text);line-height:1.55;padding:32px;}
-.page{max-width:980px;margin:0 auto;}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--gray);color:var(--body);line-height:1.55;}
+.shell{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:288px 1fr;min-height:100vh;background:var(--white);}
+.side{background:var(--navy);color:#cfe0ee;padding:34px 30px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;}
+.side .logo{height:30px;align-self:flex-start;margin-bottom:38px;}
+.side .eb{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#2D90EE;}
+.side h1{font-size:27px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-.02em;margin:10px 0 14px;}
+.side .who{font-size:13px;color:#a7c2da;line-height:1.6;}
+.side .who b{color:#fff;font-weight:600;}
+.side nav{margin-top:38px;display:flex;flex-direction:column;gap:2px;}
+.side nav a{font-size:13.5px;color:#9fbcd6;text-decoration:none;padding:9px 12px;border-radius:8px;display:flex;align-items:center;gap:11px;transition:background .15s,color .15s;}
+.side nav a:hover{background:rgba(255,255,255,.06);color:#fff;}
+.side nav a .dot{width:6px;height:6px;border-radius:50%;background:#3a6386;flex-shrink:0;}
+.side nav a:hover .dot{background:var(--mint);}
+.side .foot{margin-top:auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:11px;color:#6f93b3;line-height:1.6;}
+.main{padding:46px 52px 60px;}
+.block{margin-bottom:46px;scroll-margin-top:24px;}
+.bhead{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.bhead .ix{font-size:12px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums;background:#E6F1FD;padding:4px 9px;border-radius:6px;}
+.bhead h2{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
+.bhead p{font-size:13.5px;color:var(--muted);margin-top:3px;}
+.exec{background:var(--off);border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin-bottom:46px;}
+.exec .ek{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.exec p{font-size:15.5px;line-height:1.62;color:var(--body);}
+.exec p b{color:var(--ink);font-weight:700;}
 
-/* HEADER */
-.header{border-bottom:2px solid var(--goal-dark);padding-bottom:14px;margin-bottom:28px;}
-.header-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
-.brand{font-size:12px;font-weight:700;color:var(--goal-brand);letter-spacing:1.5px;text-transform:uppercase;}
-.date{font-size:11px;color:var(--gray);}
-h1{font-size:28px;font-weight:700;margin-bottom:4px;color:var(--goal-text);}
-.subtitle{font-size:13px;color:var(--gray);}
+/* REPORT CARDS */
+.rcard{display:block;text-decoration:none;border:1px solid var(--line);border-radius:14px;background:var(--off);padding:28px 30px;transition:border-color .15s,box-shadow .15s,transform .15s,background .15s;}
+.rcard:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(5,123,229,.12);transform:translateY(-2px);background:var(--white);}
+.rcard .rtop{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.rcard .rix{font-size:12px;font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums;background:#E6F1FD;padding:4px 9px;border-radius:6px;}
+.rcard .rtag{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mint-d);background:#E3FBF5;padding:4px 9px;border-radius:6px;}
+.rcard .rdate{margin-left:auto;font-size:12.5px;color:var(--muted);font-weight:600;}
+.rcard h3{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.01em;margin-bottom:8px;}
+.rcard .rdesc{font-size:14px;color:var(--body);line-height:1.6;max-width:640px;}
+.rcard .rstats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;padding-top:20px;border-top:1px solid var(--divider);}
+.rcard .rs .v{font-size:20px;font-weight:900;color:var(--ink);letter-spacing:-.02em;line-height:1;}
+.rcard .rs .v .up{font-size:11px;font-weight:800;color:var(--success);vertical-align:6px;margin-left:5px;}
+.rcard .rs .v .imp{font-size:11px;font-weight:800;color:var(--blue);vertical-align:6px;margin-left:5px;}
+.rcard .rs .k{font-size:11.5px;color:var(--muted);font-weight:600;margin-top:7px;}
+.rcard .rcta{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:13.5px;font-weight:700;color:var(--blue);}
+.rcard .rcta .arr{transition:transform .15s;}
+.rcard:hover .rcta .arr{transform:translateX(4px);}
+.rgrid{display:flex;flex-direction:column;gap:18px;}
 
-/* HERO MESSAGE */
-.hero{background:var(--goal-dark);color:var(--white);border-radius:8px;padding:24px 28px;margin-bottom:28px;}
-.hero-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--goal-teal);font-weight:700;margin-bottom:8px;}
-.hero-title{font-size:20px;font-weight:700;line-height:1.4;margin-bottom:8px;}
-.hero-body{font-size:14px;color:var(--goal-light-blue);}
-
-/* SECTION */
-section{margin-bottom:32px;}
-section h2{font-size:18px;font-weight:700;margin-bottom:14px;color:var(--goal-text);display:flex;align-items:center;gap:10px;}
-section h2:before{content:"";display:inline-block;width:4px;height:18px;background:var(--goal-brand);border-radius:2px;}
-
-/* FORMULA CARD */
-.formula{background:var(--goal-light-grey);border:1px solid var(--border);border-radius:8px;padding:24px;text-align:center;margin-bottom:16px;}
-.formula-line{font-size:22px;font-weight:700;color:var(--goal-text);font-family:'SF Mono',Menlo,Monaco,monospace;letter-spacing:0.5px;}
-.formula-line .var{color:var(--goal-brand);}
-.formula-line .op{color:var(--gray);margin:0 8px;}
-.formula-sub{font-size:13px;color:var(--gray);margin-top:10px;}
-
-/* EXAMPLE CARDS */
-.examples{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
-.example{border:1px solid var(--border);border-radius:8px;padding:18px 16px;}
-.example.winner{border:2px solid var(--green);}
-.example.problem{border:2px solid var(--red);}
-.example-name{font-size:13px;font-weight:700;color:var(--goal-text);margin-bottom:4px;}
-.example-mult{font-size:11px;color:var(--gray);margin-bottom:14px;}
-.example-math{font-size:18px;font-weight:700;font-family:'SF Mono',Menlo,Monaco,monospace;color:var(--goal-text);margin-bottom:4px;line-height:1.3;}
-.example-result{font-size:13px;color:var(--goal-brand);font-weight:600;margin-bottom:14px;}
-.example-real{font-size:11px;color:var(--gray);border-top:1px solid var(--border);padding-top:10px;line-height:1.5;}
-.example-real strong{color:var(--goal-text);}
-.tag{display:inline-block;padding:2px 8px;font-size:10px;border-radius:4px;font-weight:700;margin-bottom:8px;letter-spacing:0.5px;}
-.tag.win{background:var(--green-light);color:#065F46;}
-.tag.mid{background:var(--blue-light);color:#1E40AF;}
-.tag.prob{background:var(--red-light);color:#991B1B;}
-
-/* HOW IT CLEARS */
-.market-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:14px;}
-.market-card-title{font-size:14px;font-weight:700;margin-bottom:12px;}
-.market-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
-.market-row:last-child{border-bottom:none;}
-.market-pos{display:flex;align-items:center;gap:10px;}
-.pos-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:11px;font-weight:700;background:var(--goal-light-grey);color:var(--goal-dark);}
-.pos-num.gold{background:#FEF3C7;color:#92400E;}
-.pos-num.silver{background:var(--green-light);color:#065F46;}
-.market-price{font-weight:700;font-variant-numeric:tabular-nums;}
-.target-row{background:var(--green-light);margin:0 -20px;padding:10px 20px;}
-
-/* PRICE-RANGE BAR */
-.range-card{background:var(--goal-light-grey);border:1px solid var(--border);border-radius:8px;padding:22px;margin-bottom:14px;}
-.range-title{font-size:14px;font-weight:700;margin-bottom:14px;}
-.range-bar{position:relative;height:48px;background:linear-gradient(to right, #D1FAE5, #FEF3C7, #FEE2E2);border-radius:6px;margin:24px 4px 36px 4px;}
-.range-marker{position:absolute;top:-8px;width:2px;height:64px;background:var(--goal-dark);}
-.range-marker .label{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;white-space:nowrap;background:var(--goal-dark);color:#fff;padding:2px 8px;border-radius:4px;}
-.range-marker .value{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;color:var(--goal-dark);}
-.range-bar-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--gray);margin-top:6px;padding:0 4px;}
-
-/* TAKEAWAY */
-.takeaway{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.take-card{border:1px solid var(--border);border-radius:8px;padding:18px 20px;}
-.take-card.you{border-left:4px solid var(--goal-brand);}
-.take-card.us{border-left:4px solid var(--goal-teal);}
-.take-card h3{font-size:13px;font-weight:700;color:var(--goal-text);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.take-card ul{list-style:none;padding:0;}
-.take-card li{padding:6px 0;font-size:13px;color:var(--gray);position:relative;padding-left:18px;}
-.take-card li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700;}
-
-/* BOTTOM */
-.bottom-line{background:var(--goal-brand);color:var(--white);border-radius:8px;padding:22px 26px;text-align:center;margin-top:14px;}
-.bottom-line .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;opacity:0.85;margin-bottom:8px;}
-.bottom-line .msg{font-size:16px;font-weight:600;line-height:1.5;}
-
-.footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);text-align:center;font-size:11px;color:var(--light-gray);}
-
-@media print {
-  body{padding:24px;}
-  .hero,.bottom-line{print-color-adjust:exact;-webkit-print-color-adjust:exact;}
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr;}
+  .side{position:static;height:auto;}
+  .side nav{display:none;}
+  .main{padding:32px 22px 48px;}
+  .rcard .rstats{grid-template-columns:repeat(2,1fr);gap:16px;}
+  .rcard .rdate{display:none;}
 }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="shell">
 
-<!-- HEADER -->
-<header class="header">
-  <div class="header-meta">
-    <div class="brand">GOAL Platform · Bid Mechanics Primer</div>
-    <div class="date">Prepared for Joseph Loccisano · May 20, 2026</div>
-  </div>
-  <h1>How Your Bids Actually Work</h1>
-  <div class="subtitle">A 60-second walkthrough of base bid, source multipliers, and why Cost Per Click (CPC) varies across the campaign</div>
-</header>
+  <!-- SIDEBAR -->
+  <aside class="side">
+    <img class="logo" src="assets/goal-logo.png" alt="GOAL Platform">
+    <div class="eb">Client Reports</div>
+    <h1>The Loccisano Agency</h1>
+    <div class="who">Prepared for <b>Joseph Loccisano</b><br>NJ Auto Campaign · June 2026</div>
+    <nav>
+      <a href="#performance"><span class="dot"></span>Campaign Performance</a>
+      <a href="#plan"><span class="dot"></span>Lead Volume Plan &amp; Updates</a>
+    </nav>
+    <div class="foot">GOAL Performance Marketing<br>All metrics based on Leads, not Clicks.</div>
+  </aside>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-eyebrow">The short version</div>
-  <div class="hero-title">Your $7 isn't a flat price — it's a starting point you use to compete in dozens of separate auctions.</div>
-  <div class="hero-body">Each traffic source (search, email, referral, etc.) is its own marketplace. We give you one base bid and tune source-by-source with multipliers. The market decides the final clearing price for every click. Sometimes that's $5; sometimes it's $13.</div>
-</div>
+  <!-- MAIN -->
+  <main class="main">
 
-<!-- FORMULA -->
-<section>
-  <h2>The Formula</h2>
-  <div class="formula">
-    <div class="formula-line">
-      <span class="var">Base Bid</span><span class="op">×</span><span class="var">Source Multiplier</span><span class="op">=</span><span class="var">Effective Bid</span>
-    </div>
-    <div class="formula-sub">Multiplier of 100% means "bid your base." 125% means "bid 25% more on this source." 90% means "bid 10% less."</div>
-  </div>
-</section>
-
-<!-- EXAMPLES -->
-<section>
-  <h2>Worked Examples — From Your Actual Campaign</h2>
-
-  <div class="examples">
-
-    <div class="example winner">
-      <span class="tag win">Top performer</span>
-      <div class="example-name">Premium Paid Search 2</div>
-      <div class="example-mult">Multiplier: 125%</div>
-      <div class="example-math">$7.00 × 1.25</div>
-      <div class="example-result">= $8.75 effective bid</div>
-      <div class="example-real">
-        <strong>What actually happened (30d):</strong><br>
-        $8.04 average Cost Per Click (CPC) · 35 clicks · 24 leads · 1 sold.<br>
-        Market cleared just under our bid — exactly how it should work.
-      </div>
+    <div class="exec">
+      <div class="ek">Reporting hub · June 11, 2026</div>
+      <p>Two reports are available for the NJ Auto campaign. The <b>Campaign Performance</b> report covers results for June 1–11, comparing the week before and after the optimization push. The <b>Lead Volume Plan &amp; Updates</b> report documents every change applied June 8–11 to increase lead volume, with the data behind each decision.</p>
     </div>
 
-    <div class="example winner">
-      <span class="tag win">Best value</span>
-      <div class="example-name">Email</div>
-      <div class="example-mult">Multiplier: 90%</div>
-      <div class="example-math">$7.00 × 0.90</div>
-      <div class="example-result">= $6.30 effective bid</div>
-      <div class="example-real">
-        <strong>What actually happened (30d):</strong><br>
-        $5.86 average CPC · 12 clicks · 6 leads · 1 sold.<br>
-        We're paying <em>less</em> than your base on this channel.
-      </div>
-    </div>
+    <div class="rgrid">
 
-    <div class="example problem">
-      <span class="tag prob">Higher cost channel</span>
-      <div class="example-name">Premium Paid Search 5D</div>
-      <div class="example-mult">Multiplier: 170%</div>
-      <div class="example-math">$7.00 × 1.70</div>
-      <div class="example-result">= $11.90 effective bid</div>
-      <div class="example-real">
-        <strong>What actually happened (30d):</strong><br>
-        $16.85 CPC on 1 click · 0 leads. Market priced higher than we'd bid — that one click was expensive and didn't convert. We'll be lowering this multiplier.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- HOW MARKET CLEARS -->
-<section>
-  <h2>Why Cost Per Click (CPC) Varies — The Market Decides the Clearing Price</h2>
-
-  <div class="market-card">
-    <div class="market-card-title">Example: Premium Referral on a typical day <span style="font-weight:400;color:var(--gray);">(from RightPricing — our market data feed showing what each click actually clears for across all GOAL agencies)</span></div>
-
-    <div class="market-row">
-      <div class="market-pos"><span class="pos-num gold">1</span><span>1st position click</span></div>
-      <div class="market-price">$12.31</div>
-    </div>
-    <div class="market-row target-row">
-      <div class="market-pos"><span class="pos-num silver">2</span><span><strong>2nd position click — our target</strong></span></div>
-      <div class="market-price">$7.52</div>
-    </div>
-    <div class="market-row">
-      <div class="market-pos"><span class="pos-num">3</span><span>3rd position click</span></div>
-      <div class="market-price">$5.59</div>
-    </div>
-    <div class="market-row">
-      <div class="market-pos"><span class="pos-num">4+</span><span>4th-plus click</span></div>
-      <div class="market-price">$4.05</div>
-    </div>
-  </div>
-
-  <p style="font-size:13px;color:var(--gray);line-height:1.6;">
-    Your <strong style="color:var(--goal-text)">effective bid</strong> determines which position you can compete for. We target <strong style="color:var(--goal-text)">just above 2nd position</strong> — that delivers 50-65% of all clicks while you avoid overpaying for 1st. If we tried to win 1st on every source, you'd burn the budget in days.
-  </p>
-</section>
-
-<!-- THE $24 EXPLANATION -->
-<section>
-  <h2>About That $24 You Mentioned</h2>
-
-  <div style="background:var(--goal-light-grey);border:1px solid var(--border);border-radius:8px;padding:24px;margin-bottom:14px;">
-    <p style="font-size:14px;color:var(--goal-text);margin-bottom:18px;line-height:1.6;">
-      You said: <em style="color:var(--gray);">"I got three leads and paid $24."</em> Here's what almost certainly happened — the $24 wasn't the price of <strong>one</strong> lead. It was the <strong>daily total</strong> for three leads. Let's do the math.
-    </p>
-
-    <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:18px;">
-      <div style="font-size:12px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:14px;">A single day on your campaign</div>
-
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);">
-        <div style="font-size:13px;">
-          <strong>Lead 1</strong> · Premium Paid Search 2
-          <div style="font-size:11px;color:var(--gray);margin-top:2px;">Market cleared at $8.04</div>
+      <a class="rcard block" id="performance" href="reports/campaign-performance-june-2026.html">
+        <div class="rtop">
+          <span class="rix">01</span>
+          <span class="rtag">Performance</span>
+          <span class="rdate">June 1–11, 2026</span>
         </div>
-        <div style="font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;">$8.04</div>
-      </div>
-
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);">
-        <div style="font-size:13px;">
-          <strong>Lead 2</strong> · Premium Referral
-          <div style="font-size:11px;color:var(--gray);margin-top:2px;">Market cleared at $8.38</div>
+        <h3>Campaign Performance Report</h3>
+        <p class="rdesc">Week-over-week results after the June 8–11 updates: lead volume by day, the conversion funnel from ad displays to leads and calls, and a full daily detail table. June 8–11 produced 23 leads and 1 inbound call, up from 15 leads and 3 calls on June 1–4.</p>
+        <div class="rstats">
+          <div class="rs"><div class="v">24<span class="up">+33%</span></div><div class="k">Leads + calls</div></div>
+          <div class="rs"><div class="v">32<span class="up">+60%</span></div><div class="k">Clicks</div></div>
+          <div class="rs"><div class="v">3.5<span class="imp">from 4.7</span></div><div class="k">Average ad position</div></div>
+          <div class="rs"><div class="v">$10.78<span class="up">−6%</span></div><div class="k">Average cost per click</div></div>
         </div>
-        <div style="font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;">$8.38</div>
-      </div>
+        <span class="rcta">View report <span class="arr">→</span></span>
+      </a>
 
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:2px solid var(--goal-dark);">
-        <div style="font-size:13px;">
-          <strong>Lead 3</strong> · Premium Paid Search 2
-          <div style="font-size:11px;color:var(--gray);margin-top:2px;">Market cleared at $7.58</div>
+      <a class="rcard block" id="plan" href="reports/lead-volume-plan-june-2026.html">
+        <div class="rtop">
+          <span class="rix">02</span>
+          <span class="rtag">Plan &amp; Updates</span>
+          <span class="rdate">Applied June 8–11, 2026</span>
         </div>
-        <div style="font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;">$7.58</div>
-      </div>
+        <h3>Lead Volume Plan &amp; Updates</h3>
+        <p class="rdesc">Every change applied to increase lead volume: daily budget raised from $50 to $95, bids repositioned on 16 traffic sources against current market pricing, 8 household bid adjustments rebalanced, and weekend delivery enabled — plus the early read and what stayed unchanged.</p>
+        <div class="rstats">
+          <div class="rs"><div class="v">$95<span class="imp">from $50</span></div><div class="k">Daily budget</div></div>
+          <div class="rs"><div class="v">16</div><div class="k">Sources re-priced</div></div>
+          <div class="rs"><div class="v">7 days</div><div class="k">Weekly delivery — weekends on</div></div>
+          <div class="rs"><div class="v">$7.21</div><div class="k">Base bid · unchanged</div></div>
+        </div>
+        <span class="rcta">View report <span class="arr">→</span></span>
+      </a>
 
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0 4px 0;">
-        <div style="font-size:14px;font-weight:700;">Daily total</div>
-        <div style="font-size:22px;font-weight:700;color:var(--goal-brand);font-variant-numeric:tabular-nums;">$24.00</div>
-      </div>
-
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;">
-        <div style="font-size:13px;color:var(--gray);">÷ 3 leads</div>
-        <div style="font-size:16px;font-weight:700;color:var(--green);font-variant-numeric:tabular-nums;">$8.00 per lead</div>
-      </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-      <div style="background:var(--red-light);border:1px solid var(--red);border-radius:8px;padding:16px;">
-        <div style="font-size:11px;font-weight:700;color:#991B1B;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">What it looked like to you</div>
-        <div style="font-size:15px;font-weight:700;color:#991B1B;margin-bottom:4px;">"I'm paying $24 per lead"</div>
-        <div style="font-size:12px;color:#991B1B;">That would be ~3× your base bid. Felt wrong, was wrong — but not for the reason you thought.</div>
-      </div>
-
-      <div style="background:var(--green-light);border:1px solid var(--green);border-radius:8px;padding:16px;">
-        <div style="font-size:11px;font-weight:700;color:#065F46;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">What actually happened</div>
-        <div style="font-size:15px;font-weight:700;color:#065F46;margin-bottom:4px;">$24 total ÷ 3 leads = $8 each</div>
-        <div style="font-size:12px;color:#065F46;">Right at your $7 base bid. Exactly the way it's supposed to work.</div>
-      </div>
-    </div>
-
-    <p style="font-size:13px;color:var(--gray);margin-top:18px;line-height:1.6;">
-      The dashboard you were looking at shows the <strong style="color:var(--goal-text)">daily spend total</strong>, not the per-lead price. We'll point this out clearly the next time we review numbers together so it's never confusing again. If you ever see a number that looks off, take a screenshot and we'll break it down line-by-line.
-    </p>
-  </div>
-</section>
-
-<!-- YOUR ACTUAL RANGE -->
-<section>
-  <h2>Your Actual Cost Per Click (CPC) Range — Last 30 Days</h2>
-
-  <div class="range-card">
-    <div class="range-title">Where every click you paid for landed</div>
-
-    <div style="position:relative;height:64px;margin:32px 0 18px 0;">
-      <div style="height:48px;background:linear-gradient(to right, #D1FAE5 0%, #FEF3C7 60%, #FEE2E2 100%);border-radius:6px;position:relative;">
-        <div style="position:absolute;left:32%;top:-8px;width:2px;height:64px;background:var(--goal-brand);">
-          <span style="position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:700;background:var(--goal-brand);color:#fff;padding:2px 8px;border-radius:4px;white-space:nowrap;">Average Cost Per Click</span>
-          <span style="position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;color:var(--goal-brand);">$8.05</span>
-        </div>
-      </div>
-      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--gray);margin-top:6px;padding:0 4px;">
-        <span><strong style="color:var(--green)">$3.97</strong><br>cheapest click</span>
-        <span style="text-align:center"><strong>$8.05</strong><br>30-day average</span>
-        <span style="text-align:right"><strong style="color:var(--red)">$16.85</strong><br>most expensive click</span>
-      </div>
-    </div>
-
-    <p style="font-size:13px;color:var(--gray);margin-top:14px;line-height:1.6;">
-      Across 68 clicks in the last 30 days, the cheapest was <strong style="color:var(--green)">$3.97</strong>, the most expensive was <strong style="color:var(--red)">$16.85</strong>, and the average was <strong style="color:var(--goal-text)">$8.05</strong> — right at your $7 base bid. No individual click hit $24. We can pull the exact spend breakdown for any specific lead any time you want to look at one.
-    </p>
-  </div>
-</section>
-
-<!-- TAKEAWAY -->
-<section>
-  <h2>What we control</h2>
-
-  <div class="take-card us" style="max-width:100%;">
-    <ul>
-      <li>Source multipliers, tuned weekly against RightPricing market data</li>
-      <li>Pausing sources that bid but never win</li>
-      <li>Targeting just above 2nd position — never overpaying for 1st</li>
-      <li>Source-by-source budget allocation to the channels that actually close</li>
-      <li>Geographic targeting based on where your real sales come from (right now: New Jersey)</li>
-    </ul>
-  </div>
-</section>
-
-<!-- BOTTOM LINE -->
-<div class="bottom-line">
-  <div class="label">Bottom line</div>
-  <div class="msg">We set the base bid. The multipliers and market price determine the actual CPC (cost per click). Multipliers are tuned so your spend is focused on the channels that are closing, which the data now tells us are in NJ.</div>
-</div>
-
-<div class="footer">
-  GOAL Platform · The Loccisano Agency · Bid Mechanics Primer · 2026-05-20
-</div>
+  </main>
 
 </div>
 </body>
